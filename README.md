@@ -47,7 +47,7 @@ To use this tool in your local environment, follow these steps.
 
 1.  Clone the repository:
     ```bash
-    git clone [https://github.com/TuoUsername/project-automation-tools.git](https://github.com/TuoUsername/project-automation-tools.git)
+    git clone [https://github.com/YourUsername/project-automation-tools.git]
     ```
 2.  Navigate to the directory:
     ```bash
