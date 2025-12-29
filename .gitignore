@@ -1,1 +1,4 @@
 .env
+generated_projects/
+.DS_store
+__pycache__/jira_integration.cpython-313.pyc

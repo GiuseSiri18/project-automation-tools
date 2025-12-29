@@ -1,62 +1,37 @@
-# 🚀 Project Automation Toolkit
+# 🚀 Project Automation Toolkit + Jira Integration
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Jira](https://img.shields.io/badge/Jira-Cloud-0052CC)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![Status](https://img.shields.io/badge/Status-Active-success)
 
 > **"Standardization is the first step to scaling engineering teams."**
 
 ### 📖 About The Project
 
-As an Engineering Manager, I noticed that **context switching** and **setup fatigue** are silent killers of productivity. Every time a team starts a new microservice or module, they waste valuable time deciding on folder structures and creating boilerplate files.
-
-**This toolkit solves that problem.** It automates the initialization of new software projects, ensuring that every repository starts with:
-1.  A consistent, industry-standard directory structure.
-2.  Pre-configured documentation templates.
-3.  Immediate readiness for development.
-
-It allows developers to stop worrying about *setup* and start focusing on *shipping*.
+This toolkit automates the initialization of new software projects. It bridges the gap between **Local Development** and **Project Management** by:
+1.  Scaffolding a standard directory structure locally.
+2.  **Automatically creating a tracking ticket in Jira** to signal the team that a new service has started.
 
 ---
 
 ### ✨ Key Features
 
-* **⚡ Instant Scaffolding:** Generates a full project structure (`src`, `tests`, `docs`, `scripts`) in under 1 second.
-* **📄 Documentation-First Approach:** Automatically creates a `README.md` to encourage good documentation habits from Day 1.
-* **🛡️ Error Handling:** Prevents overwriting existing projects to ensure data safety.
-* **🐍 Pure Python:** No heavy dependencies, runs on any machine with Python installed.
+* **⚡ Instant Scaffolding:** Generates a full project structure (`src`, `tests`, `docs`) in a dedicated output folder.
+* **🔗 Jira Integration:** Connects to Jira Cloud API to create a "Setup Task" automatically.
+* **🔒 Secure:** Uses environment variables to handle credentials safely.
+* **🛡️ Clean Workspace:** All generated projects are isolated in a `generated_projects/` directory.
 
 ---
 
-### 🛠️ Technology Stack
+### ⚙️ Configuration (Required)
 
-* **Language:** Python 3
-* **Modules:** `os`, `sys` (Standard Library)
-* **Focus:** Scripting & Automation
+To enable Jira integration, you must configure your credentials.
 
----
+1.  Create a file named `.env` in the root directory.
+2.  Add your Jira Cloud credentials (do not commit this file!):
 
-### 🚀 Getting Started
-
-To use this tool in your local environment, follow these steps.
-
-#### Prerequisites
-* Python 3.x installed on your machine.
-
-#### Installation
-
-1.  Clone the repository:
-    ```bash
-    git clone [https://github.com/YourUsername/project-automation-tools.git]
-    ```
-2.  Navigate to the directory:
-    ```bash
-    cd project-automation-tools
-    ```
-
-#### Usage
-
-Run the script passing the desired project name as an argument:
-
-```bash
-python setup_project.py "MyNewService"
+```env
+JIRA_URL="[https://your-domain.atlassian.net](https://your-domain.atlassian.net)"
+JIRA_EMAIL="your-email@example.com"
+JIRA_TOKEN="your-api-token"
+JIRA_PROJECT_KEY="PROJ"
